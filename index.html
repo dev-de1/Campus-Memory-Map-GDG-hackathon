@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Memory Map - Nirma University</title>
+  <meta name="description" content="Drop memories on the Nirma University campus map. Share your study spots, fun moments, and favorite places.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background gradient -->
+  <div class="bg-gradient"></div>
+  
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">📍</span>
+          <div>
+            <h1>Campus Memories</h1>
+            <p class="tagline">Nirma University</p>
+          </div>
+        </div>
+        <div class="memory-count">
+          <span id="memoryCount">0</span> memories saved
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">
+        <span>🎯</span> All
+        <span class="count" id="count-all">0</span>
+      </button>
+      <button class="filter-btn" data-filter="study">
+        <span>📚</span> Study
+        <span class="count" id="count-study">0</span>
+      </button>
+      <button class="filter-btn" data-filter="fun">
+        <span>🎉</span> Fun
+        <span class="count" id="count-fun">0</span>
+      </button>
+      <button class="filter-btn" data-filter="friends">
+        <span>👥</span> Friends
+        <span class="count" id="count-friends">0</span>
+      </button>
+      <button class="filter-btn" data-filter="food">
+        <span>🍕</span> Food
+        <span class="count" id="count-food">0</span>
+      </button>
+      <button class="filter-btn" data-filter="events">
+        <span>🎭</span> Events
+        <span class="count" id="count-events">0</span>
+      </button>
+      <button class="filter-btn" data-filter="sports">
+        <span>⚽</span> Sports
+        <span class="count" id="count-sports">0</span>
+      </button>
+    </div>
+
+    <!-- Map Container -->
+    <div class="map-wrapper">
+      <div id="hint" class="hint">
+        <span class="pulse">👆</span>
+        <span>Click anywhere on the map to add a memory</span>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <!-- Footer hint -->
+    <div class="footer-hint">
+      <p>Click anywhere on the map to add a new memory ✨</p>
+    </div>
+  </div>
+
+  <!-- Add Memory Modal -->
+  <div id="addMemoryModal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add New Memory</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Memory Type</label>
+          <div class="type-grid">
+            <button class="type-btn" data-type="study"><span>📚</span> Study</button>
+            <button class="type-btn" data-type="fun"><span>🎉</span> Fun</button>
+            <button class="type-btn" data-type="friends"><span>👥</span> Friends</button>
+            <button class="type-btn" data-type="food"><span>🍕</span> Food</button>
+            <button class="type-btn" data-type="events"><span>🎭</span> Events</button>
+            <button class="type-btn" data-type="sports"><span>⚽</span> Sports</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="memoryTitle">Title</label>
+          <input type="text" id="memoryTitle" placeholder="What happened here?">
+        </div>
+        <div class="form-group">
+          <label for="memoryDescription">Description</label>
+          <textarea id="memoryDescription" placeholder="Tell us more about this memory..." rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Photos</label>
+          <div class="photo-upload">
+            <input type="file" id="photoInput" accept="image/*" multiple hidden>
+            <button class="upload-btn" id="uploadBtn">
+              <span>📷</span> Add Photos
+            </button>
+          </div>
+          <div id="photoPreview" class="photo-preview"></div>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <div class="location-display" id="locationDisplay">
+            <span>📍</span>
+            <span id="locationCoords">--</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="saveBtn">Save Memory</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Gallery Modal -->
+  <div id="galleryModal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="gallery-content">
+      <button class="gallery-close" id="closeGallery">&times;</button>
+      <button class="gallery-nav gallery-prev" id="galleryPrev">❮</button>
+      <div class="gallery-image-container">
+        <img id="galleryImage" src="" alt="Memory photo">
+        <div class="gallery-counter" id="galleryCounter">1 / 1</div>
+      </div>
+      <button class="gallery-nav gallery-next" id="galleryNext">❯</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
