@@ -1,11 +1,12 @@
-// 🔥 Firebase Config (you already have this)
+// 🔥 Firebase Config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "XXXX",
-  appId: "XXXX"
+apiKey: "AIzaSyA2bgYmyE0CQA0naiQWWr2eRDOH4BXK0BI",
+  authDomain: "gdg-hackathon-cmm.firebaseapp.com",
+  projectId: "gdg-hackathon-cmm",
+  storageBucket: "gdg-hackathon-cmm.firebasestorage.app",
+  messagingSenderId: "711456498986",
+  appId: "1:711456498986:web:96736f790ab205047f2a53",
+  measurementId: "G-C9CQ6T8NEK"
 };
 
 // Initialize Firebase
