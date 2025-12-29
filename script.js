@@ -1,3 +1,17 @@
+// 🔥 Firebase Config (you already have this)
+const firebaseConfig = {
+  apiKey: "AIzaSyA2bgYmyE0CQA0naiQWWr2eRDOH4BXK0BI",
+  authDomain: "gdg-hackathon-cmm.firebaseapp.com",
+  projectId: "gdg-hackathon-cmm",
+  storageBucket: "gdg-hackathon-cmm.firebasestorage.app",
+  messagingSenderId: "711456498986",
+  appId: "1:711456498986:web:96736f790ab205047f2a53",
+  measurementId: "G-C9CQ6T8NEK"
+
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 // Constants
 const NIRMA_CENTER = [23.1328, 72.5438];
 const DEFAULT_ZOOM = 16;
