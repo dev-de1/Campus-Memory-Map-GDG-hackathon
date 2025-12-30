@@ -1,4 +1,4 @@
-# 📍 Campus Memory Map – Nirma University
+# 📍 Campus Memory Map – Nirma University 🗺️
 
 An interactive, map-based web application that transforms campus locations into a shared digital memory space.  
 Students can pin memories, stories, and photos directly onto a live campus map — turning places into experiences.
