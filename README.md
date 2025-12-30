@@ -12,7 +12,7 @@ Campus life creates countless meaningful moments, but they remain:
 - Disconnected from physical locations
 - Hard to revisit or share collectively
 
-There is no centralized, location-aware platform to capture and explore these memories.
+There is no centralized,location-aware platform to capture and explore these memories.
 
 ---
 
